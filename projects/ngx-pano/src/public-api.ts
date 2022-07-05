@@ -3,5 +3,5 @@
  */
 
 export * from './lib/ngx-pano.service';
-export * from './lib/ngx-pano.component';
+export * from './lib/pano-layout/pano-layout.component';
 export * from './lib/ngx-pano.module';
