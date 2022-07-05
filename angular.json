@@ -3,5 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "ngx-pano": {
+      "projectType": "library",
+      "root": "projects/ngx-pano",
+      "sourceRoot": "projects/ngx-pano/src",
+      "prefix": "pano",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-pano/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-pano/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-pano/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-pano/src/test.ts",
+            "tsConfig": "projects/ngx-pano/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-pano/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }
