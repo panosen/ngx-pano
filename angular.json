@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/ngx-pano",
       "sourceRoot": "projects/ngx-pano/src",
-      "prefix": "pano",
+      "prefix": "",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

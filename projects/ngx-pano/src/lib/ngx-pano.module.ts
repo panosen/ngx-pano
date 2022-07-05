@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
-import { NgxPanoComponent } from './ngx-pano.component';
+import { PanoLayoutComponent } from './pano-layout/pano-layout.component';
 
-
+const COMPONENTS = [
+  PanoLayoutComponent
+];
 
 @NgModule({
   declarations: [
-    NgxPanoComponent
+    ...COMPONENTS
   ],
   imports: [
   ],
   exports: [
-    NgxPanoComponent
+    ...COMPONENTS
   ]
 })
 export class NgxPanoModule { }
