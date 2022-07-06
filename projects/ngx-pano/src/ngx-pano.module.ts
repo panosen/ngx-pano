@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { PanoLayoutColumnComponent } from './components/pano-layout-column/pano-layout-column.component';
@@ -19,6 +20,7 @@ const COMPONENTS = [
         ...COMPONENTS
     ],
     imports: [
+        CommonModule
     ],
     exports: [
         ...COMPONENTS

@@ -7,7 +7,7 @@ export type PanoSidebarState = 'mini' | 'normal'
 })
 export class PanoSidebarToggleService {
 
-    _state: PanoSidebarState = 'normal';
+    private _state: PanoSidebarState = 'normal';
 
     sidebarState(): PanoSidebarState {
         return this._state;
