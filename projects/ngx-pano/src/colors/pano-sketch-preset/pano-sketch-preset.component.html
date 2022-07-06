@@ -1,0 +1,10 @@
+<div class="sketch-swatches">
+    <div class="sketch-wrap" *ngFor="let c of colors">
+        <pano-swatch [color]="normalizeValue(c).color"
+                      [style]="swatchStyle"
+                      [focusStyle]="focusStyle(c)"
+                      (onClick)="handleClick($event)"
+                      (onEnter)="panoSwatchHover($event)"
+                      class="swatch"></pano-swatch>
+    </div>
+</div>

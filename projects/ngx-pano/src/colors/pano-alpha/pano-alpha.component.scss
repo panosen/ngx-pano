@@ -1,0 +1,32 @@
+:host {
+    display: inline-block;
+    position: relative;
+}
+
+
+.alpha-gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.alpha-coordinates {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.alpha-slider {
+    background: #fff;
+    margin-top: 1px;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37),
+}

@@ -1,0 +1,22 @@
+<div class="hd">
+    <div class="colorView" [ngStyle]="defaultStyle"></div>
+    <div class="colorView" [ngStyle]="previewStyle"></div>
+    <div class="confirm" (click)="select()">确认</div>
+</div>
+
+<h3>主题颜色</h3>
+<div class="xxx">
+    <div class="color-item" *ngFor="let color of tColor" [ngStyle]="{backgroundColor : color}"
+        (mouseenter)="onMouseOver(color)" (mouseleave)="onMouseOut()" (click)="pick(color)"></div>
+</div>
+
+<div class="xxx">
+    <div class="color-item" *ngFor="let color of colorPanel" [ngStyle]="{backgroundColor : color}"
+         (mouseenter)="onMouseOver(color)" (mouseleave)="onMouseOut()" (click)="pick(color)"></div>
+</div>
+
+<h3>标准颜色</h3>
+<div class="xxx">
+    <div class="color-item" *ngFor="let color of bColor" [ngStyle]="{backgroundColor : color}"
+        (mouseenter)="onMouseOver(color)" (mouseleave)="onMouseOut()" (click)="pick(color)"></div>
+</div>

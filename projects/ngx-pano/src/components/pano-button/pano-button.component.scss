@@ -1,0 +1,593 @@
+@import "../../styles/mixins";
+@import "../../styles/themes/variable";
+@import "../../styles/themes/button";
+
+:host {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border-radius: $pano-button-border-radius;
+
+    cursor: $pano-button-cursor;
+    font-family: $pano-button-font-family;
+    font-weight: $pano-button-font-weight;
+    border-style: $pano-button-border-style;
+    border-width: $pano-button-border-width;
+    text-transform: $pano-button-text-transform;
+
+    &:focus {
+        position: relative;
+        outline: none;
+    }
+
+    &[disabled],
+    &.status-disabled {
+        cursor: $pano-button-disabled-cursor;
+    }
+
+    &.pano-transition {
+        @include pano-component-animation(background-color, border-color, box-shadow, color);
+    }
+
+    // #region size
+
+    padding: $pano-button-padding-default;
+    font-size: $pano-button-text-font-size-default;
+    line-height: $pano-button-text-line-height-default;
+
+    &.size-tiny {
+        padding: $pano-button-padding-tiny;
+        font-size: $pano-button-text-font-size-tiny;
+        line-height: $pano-button-text-line-height-tiny;
+    }
+
+    &.size-small {
+        padding: $pano-button-padding-small;
+        font-size: $pano-button-text-font-size-small;
+        line-height: $pano-button-text-line-height-small;
+    }
+
+    &.size-large {
+        padding: $pano-button-padding-large;
+        font-size: $pano-button-text-font-size-large;
+        line-height: $pano-button-text-line-height-large;
+    }
+
+    &.size-giant {
+        padding: $pano-button-padding-giant;
+        font-size: $pano-button-text-font-size-giant;
+        line-height: $pano-button-text-line-height-giant;
+    }
+
+    // #endregion size
+
+    // #region color
+
+    background-color: $pano-button-background-color-default;
+    border-color: $pano-button-border-color-default;
+    color: $pano-button-color-default;
+
+    &.outline {
+        background-color: $pano-button-outline-background-color-default !important;
+        border-color: $pano-button-outline-border-color-default !important;
+        color: $pano-button-outline-color-default !important;
+    }
+
+    &.hero {
+        color: $pano-button-hero-color-default !important;
+        border: none !important;
+        box-shadow: $pano-button-hero-bevel-size $pano-button-hero-bevel-color-default,
+            $panp-button-hero-glow-size $pano-button-hero-glow-color-default, $pano-button-hero-shadow;
+        background-image: linear-gradient(
+            to right,
+            $pano-button-hero-background-color-left-default,
+            $pano-button-hero-background-color-right-default
+        ) !important;
+    }
+
+    &:hover {
+        background-color: $pano-button-background-color-default-hover;
+        border-color: $pano-button-border-color-default-hover;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-default-hover !important;
+            border-color: $pano-button-outline-border-color-default-hover !important;
+            color: $pano-button-outline-color-default-hover !important;
+        }
+
+        &.hero {
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-default-hover,
+                $pano-button-hero-background-color-right-default-hover
+            );
+        }
+    }
+
+    &:active {
+        background-color: $pano-button-background-color-default-active;
+        border-color: $pano-button-border-color-default-active;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-default-active !important;
+            border-color: $pano-button-outline-border-color-default-active !important;
+            color: $pano-button-outline-color-default-active !important;
+        }
+
+        &.hero {
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-default-active,
+                $pano-button-hero-background-color-right-default-active
+            );
+        }
+    }
+
+    &:focus {
+        background-color: $pano-button-background-color-default-focus;
+        border-color: $pano-button-border-color-default-focus;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-default-focus !important;
+            border-color: $pano-button-outline-border-color-default-focus !important;
+            color: $pano-button-outline-color-default-focus !important;
+        }
+
+        &.hero {
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-default-focus,
+                $pano-button-hero-background-color-right-default-focus
+            );
+        }
+    }
+
+    &[disabled],
+    &.disabled {
+        background-color: $pano-button-background-color-default-disabled;
+        border-color: $pano-button-border-color-default-disabled;
+        color: $pano-button-color-default-disabled;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-default-disabled !important;
+            border-color: $pano-button-outline-border-color-default-disabled !important;
+            color: $pano-button-outline-color-default-disabled !important;
+        }
+
+        &.hero {
+            background-image: none;
+            color: $pano-button-hero-color-default-disabled;
+            background-color: $pano-button-hero-background-color-default-disabled;
+        }
+    }
+
+    &.color-primary {
+        background-color: $pano-button-background-color-primary;
+        border-color: $pano-button-border-color-primary;
+        color: $pano-button-color-primary;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-primary !important;
+            border-color: $pano-button-outline-border-color-primary !important;
+            color: $pano-button-outline-color-primary !important;
+        }
+
+        &.hero {
+            color: $pano-button-hero-color-primary !important;
+            border: none !important;
+            box-shadow: $pano-button-hero-bevel-size $pano-button-hero-bevel-color-primary,
+                $panp-button-hero-glow-size $pano-button-hero-glow-color-primary, $pano-button-hero-shadow;
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-primary,
+                $pano-button-hero-background-color-right-primary
+            ) !important;
+        }
+
+        &:hover {
+            background-color: $pano-button-background-color-primary-hover;
+            border-color: $pano-button-border-color-primary-hover;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-primary-hover !important;
+                border-color: $pano-button-outline-border-color-primary-hover !important;
+                color: $pano-button-outline-color-primary-hover !important;
+            }
+        }
+
+        &:active {
+            background-color: $pano-button-background-color-primary-active;
+            border-color: $pano-button-border-color-primary-active;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-primary-active !important;
+                border-color: $pano-button-outline-border-color-primary-active !important;
+                color: $pano-button-outline-color-primary-active !important;
+            }
+        }
+
+        &:focus {
+            background-color: $pano-button-background-color-primary-focus;
+            border-color: $pano-button-border-color-primary-focus;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-primary-focus !important;
+                border-color: $pano-button-outline-border-color-primary-focus !important;
+                color: $pano-button-outline-color-primary-focus !important;
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background-color: $pano-button-background-color-primary-disabled;
+            border-color: $pano-button-border-color-primary-disabled;
+            color: $pano-button-color-primary-disabled;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-primary-disabled !important;
+                border-color: $pano-button-outline-border-color-primary-disabled !important;
+                color: $pano-button-outline-color-primary-disabled !important;
+            }
+        }
+    }
+
+    &.color-success {
+        background-color: $pano-button-background-color-success;
+        border-color: $pano-button-border-color-success;
+        color: $pano-button-color-success;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-success !important;
+            border-color: $pano-button-outline-border-color-success !important;
+            color: $pano-button-outline-color-success !important;
+        }
+
+        &.hero {
+            color: $pano-button-hero-color-success !important;
+            border: none !important;
+            box-shadow: $pano-button-hero-bevel-size $pano-button-hero-bevel-color-success,
+                $panp-button-hero-glow-size $pano-button-hero-glow-color-success, $pano-button-hero-shadow;
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-success,
+                $pano-button-hero-background-color-right-success
+            ) !important;
+        }
+
+        &:hover {
+            background-color: $pano-button-background-color-success-hover;
+            border-color: $pano-button-border-color-success-hover;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-success-hover !important;
+                border-color: $pano-button-outline-border-color-success-hover !important;
+                color: $pano-button-outline-color-success-hover !important;
+            }
+        }
+
+        &:active {
+            background-color: $pano-button-background-color-success-active;
+            border-color: $pano-button-border-color-success-active;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-success-active !important;
+                border-color: $pano-button-outline-border-color-success-active !important;
+                color: $pano-button-outline-color-success-active !important;
+            }
+        }
+
+        &:focus {
+            background-color: $pano-button-background-color-success-focus;
+            border-color: $pano-button-border-color-success-focus;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-success-focus !important;
+                border-color: $pano-button-outline-border-color-success-focus !important;
+                color: $pano-button-outline-color-success-focus !important;
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background-color: $pano-button-background-color-success-disabled;
+            border-color: $pano-button-border-color-success-disabled;
+            color: $pano-button-color-success-disabled;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-success-disabled !important;
+                border-color: $pano-button-outline-border-color-success-disabled !important;
+                color: $pano-button-outline-color-success-disabled !important;
+            }
+        }
+    }
+
+    &.color-info {
+        background-color: $pano-button-background-color-info;
+        border-color: $pano-button-border-color-info;
+        color: $pano-button-color-info;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-info !important;
+            border-color: $pano-button-outline-border-color-info !important;
+            color: $pano-button-outline-color-info !important;
+        }
+
+        &.hero {
+            color: $pano-button-hero-color-info !important;
+            border: none !important;
+            box-shadow: $pano-button-hero-bevel-size $pano-button-hero-bevel-color-info,
+                $panp-button-hero-glow-size $pano-button-hero-glow-color-info, $pano-button-hero-shadow;
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-info,
+                $pano-button-hero-background-color-right-info
+            ) !important;
+        }
+
+        &:hover {
+            background-color: $pano-button-background-color-info-focus;
+            border-color: $pano-button-border-color-info-focus;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-info-hover !important;
+                border-color: $pano-button-outline-border-color-info-hover !important;
+                color: $pano-button-outline-color-info-hover !important;
+            }
+        }
+
+        &:active {
+            background-color: $pano-button-background-color-info-active;
+            border-color: $pano-button-border-color-info-active;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-info-active !important;
+                border-color: $pano-button-outline-border-color-info-active !important;
+                color: $pano-button-outline-color-info-active !important;
+            }
+        }
+
+        &:focus {
+            background-color: $pano-button-background-color-info-hover;
+            border-color: $pano-button-border-color-info-hover;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-info-focus !important;
+                border-color: $pano-button-outline-border-color-info-focus !important;
+                color: $pano-button-outline-color-info-focus !important;
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background-color: $pano-button-background-color-info-disabled;
+            border-color: $pano-button-border-color-info-disabled;
+            color: $pano-button-color-info-disabled;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-info-disabled !important;
+                border-color: $pano-button-outline-border-color-info-disabled !important;
+                color: $pano-button-outline-color-info-disabled !important;
+            }
+        }
+    }
+
+    &.color-warning {
+        background-color: $pano-button-background-color-warning;
+        border-color: $pano-button-border-color-warning;
+        color: $pano-button-color-warning;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-warning !important;
+            border-color: $pano-button-outline-border-color-warning !important;
+            color: $pano-button-outline-color-warning !important;
+        }
+
+        &.hero {
+            color: $pano-button-hero-color-warning !important;
+            border: none !important;
+            box-shadow: $pano-button-hero-bevel-size $pano-button-hero-bevel-color-warning,
+                $panp-button-hero-glow-size $pano-button-hero-glow-color-warning, $pano-button-hero-shadow;
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-warning,
+                $pano-button-hero-background-color-right-warning
+            ) !important;
+        }
+
+        &:hover {
+            background-color: $pano-button-background-color-warning-hover;
+            border-color: $pano-button-border-color-warning-hover;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-warning-hover !important;
+                border-color: $pano-button-outline-border-color-warning-hover !important;
+                color: $pano-button-outline-color-warning-hover !important;
+            }
+        }
+
+        &:active {
+            background-color: $pano-button-background-color-warning-active;
+            border-color: $pano-button-border-color-warning-active;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-warning-active !important;
+                border-color: $pano-button-outline-border-color-warning-active !important;
+                color: $pano-button-outline-color-warning-active !important;
+            }
+        }
+
+        &:focus {
+            background-color: $pano-button-background-color-warning-focus;
+            border-color: $pano-button-border-color-warning-focus;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-warning-focus !important;
+                border-color: $pano-button-outline-border-color-warning-focus !important;
+                color: $pano-button-outline-color-warning-focus !important;
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background-color: $pano-button-background-color-warning-disabled;
+            border-color: $pano-button-border-color-warning-disabled;
+            color: $pano-button-color-warning-disabled;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-warning-disabled !important;
+                border-color: $pano-button-outline-border-color-warning-disabled !important;
+                color: $pano-button-outline-color-warning-disabled !important;
+            }
+        }
+    }
+
+    &.color-danger {
+        background-color: $pano-button-background-color-danger;
+        border-color: $pano-button-border-color-danger;
+        color: $pano-button-color-danger;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-danger !important;
+            border-color: $pano-button-outline-border-color-danger !important;
+            color: $pano-button-outline-color-danger !important;
+        }
+
+        &.hero {
+            color: $pano-button-hero-color-danger !important;
+            border: none !important;
+            box-shadow: $pano-button-hero-bevel-size $pano-button-hero-bevel-color-danger,
+                $panp-button-hero-glow-size $pano-button-hero-glow-color-danger, $pano-button-hero-shadow;
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-danger,
+                $pano-button-hero-background-color-right-danger
+            ) !important;
+        }
+
+        &:hover {
+            background-color: $pano-button-background-color-danger-hover;
+            border-color: $pano-button-border-color-danger-hover;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-danger-hover !important;
+                border-color: $pano-button-outline-border-color-danger-hover !important;
+                color: $pano-button-outline-color-danger-hover !important;
+            }
+        }
+
+        &:active {
+            background-color: $pano-button-background-color-danger-active;
+            border-color: $pano-button-border-color-danger-active;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-danger-active !important;
+                border-color: $pano-button-outline-border-color-danger-active !important;
+                color: $pano-button-outline-color-danger-active !important;
+            }
+        }
+
+        &:focus {
+            background-color: $pano-button-background-color-danger-focus;
+            border-color: $pano-button-border-color-danger-focus;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-danger-focus !important;
+                border-color: $pano-button-outline-border-color-danger-focus !important;
+                color: $pano-button-outline-color-danger-focus !important;
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background-color: $pano-button-background-color-danger-disabled;
+            border-color: $pano-button-border-color-danger-disabled;
+            color: $pano-button-color-danger-disabled;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-danger-disabled !important;
+                border-color: $pano-button-outline-border-color-danger-disabled !important;
+                color: $pano-button-outline-color-danger-disabled !important;
+            }
+        }
+    }
+
+    &.color-control {
+        background-color: $pano-button-background-color-control;
+        border-color: $pano-button-border-color-control;
+        color: $pano-button-color-control;
+
+        &.outline {
+            background-color: $pano-button-outline-background-color-control !important;
+            border-color: $pano-button-outline-border-color-control !important;
+            color: $pano-button-outline-color-control !important;
+        }
+
+        &.hero {
+            color: $pano-button-hero-color-control !important;
+            border: none !important;
+            box-shadow: $pano-button-hero-bevel-size $pano-button-hero-bevel-color-control,
+                $panp-button-hero-glow-size $pano-button-hero-glow-color-control, $pano-button-hero-shadow;
+            background-image: linear-gradient(
+                to right,
+                $pano-button-hero-background-color-left-control,
+                $pano-button-hero-background-color-right-control
+            ) !important;
+        }
+
+        &:hover {
+            background-color: $pano-button-background-color-control-hover;
+            border-color: $pano-button-border-color-control-hover;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-control-hover !important;
+                border-color: $pano-button-outline-border-color-control-hover !important;
+                color: $pano-button-outline-color-control-hover !important;
+            }
+        }
+
+        &:active {
+            background-color: $pano-button-background-color-control-active;
+            border-color: $pano-button-border-color-control-active;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-control-active !important;
+                border-color: $pano-button-outline-border-color-control-active !important;
+                color: $pano-button-outline-color-control-active !important;
+            }
+        }
+
+        &:focus {
+            background-color: $pano-button-background-color-control-focus;
+            border-color: $pano-button-border-color-control-focus;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-control-focus !important;
+                border-color: $pano-button-outline-border-color-control-focus !important;
+                color: $pano-button-outline-color-control-focus !important;
+            }
+        }
+
+        &[disabled],
+        &.disabled {
+            background-color: $pano-button-background-color-control-disabled;
+            border-color: $pano-button-border-color-control-disabled;
+            color: $pano-button-color-control-disabled;
+
+            &.outline {
+                background-color: $pano-button-outline-background-color-control-disabled !important;
+                border-color: $pano-button-outline-border-color-control-disabled !important;
+                color: $pano-button-outline-color-control-disabled !important;
+            }
+        }
+    }
+
+    // #endregion color
+
+    // #region skin
+
+    // #endregion skin
+}

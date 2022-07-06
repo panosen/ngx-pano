@@ -1,0 +1,14 @@
+<div class="wrap" [ngStyle]="wrapStyle">
+    <input [ngStyle]="inputStyle"
+           spellCheck="false"
+           [value]="currentValue"
+           [placeholder]="placeholder"
+           (keydown)="handleKeydown($event)"
+           (keyup)="handleKeyup($event)"
+           (focus)="handleFocus($event)"
+           (focusout)="handleFocusOut($event)"
+           [attr.aria-labelledby]="uniqueId" />
+    <span [id]="uniqueId" *ngIf="label" [ngStyle]="labelStyle" (mousedown)="handleMousedown($event)">
+        {{ label }}
+    </span>
+</div>

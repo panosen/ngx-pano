@@ -1,0 +1,8 @@
+<div class="pano-drawer-mask" @easeInOut></div>
+
+<div class="pano-drawer-content" [ngStyle]="panoDrawerContentStyle()" @slideInOut>
+
+    <pano-button (onClick)="clickClose()">close</pano-button>
+
+    <pano-button (onClick)="clickDismiss()">dismiss</pano-button>
+</div>

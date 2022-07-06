@@ -1,0 +1,24 @@
+.sketch-swatches {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -10px;
+    padding: 10px 0px 0px 10px;
+    border-top: 1px solid rgb(238, 238, 238);
+}
+
+.sketch-wrap {
+    width: 16px;
+    height: 16px;
+    margin: 0px 10px 10px 0px;
+}
+
+:host-context([dir=rtl]) .sketch-swatches {
+    padding-right: 10px;
+    padding-left: 0;
+}
+
+:host-context([dir=rtl]) .sketch-wrap {
+    margin-left: 10px;
+    margin-right: 0;
+}

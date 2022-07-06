@@ -1,0 +1,11 @@
+
+<pano-checkboard></pano-checkboard>
+
+<!--渐变的颜色-->
+<div class="alpha-gradient" [ngStyle]="gradient"></div>
+
+<div pano-coordinates (coordinatesChange)="handleCoordinatesChange($event)" class="alpha-coordinates">
+    <div class="alpha-slider" [ngStyle]="pointer"></div>
+</div>
+
+

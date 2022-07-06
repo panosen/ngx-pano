@@ -1,0 +1,8 @@
+<div class="autoscroll">
+    <ng-content></ng-content>
+</div>
+
+<div class="toggle" (click)="toggle()">
+    <pano-icon name="chevron-left-outline" *ngIf="state == 'normal'"></pano-icon>
+    <pano-icon name="chevron-right-outline" *ngIf="state == 'mini'"></pano-icon>
+</div>

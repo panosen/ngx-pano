@@ -1,0 +1,110 @@
+:host {
+    position: relative;
+    text-align: left;
+    font-size: 14px;
+    display: inline-block;
+    outline: none;
+    width: 190px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin-top: 2px;
+    padding: 10px;
+    padding-bottom: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.15);
+    //transition: all .3s ease;
+    box-sizing: content-box;
+
+    h3 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        line-height: 1;
+        color: #333;
+    }
+
+    input {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.ul, .li, .ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hd {
+    overflow: hidden;
+    line-height: 29px;
+    display: flex;
+    justify-content: space-between;
+
+    .colorView {
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        //transition: background-color .3s ease;
+        color: #333;
+        border: 1px dashed #ccc;
+    }
+
+    .confirm {
+        text-align: center;
+        border: 1px solid #ccc;
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer;
+    }
+}
+
+.xxx {
+}
+
+.color-item {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    transition: all .3s ease;
+
+    &:hover {
+        box-shadow: 0 0 5px rgba(0,0,0,.4);
+    }
+}
+
+.ttt {
+    position: relative;
+    display: block;
+    height: 120px;
+    border: 1px solid #ccc;
+}
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    &.lightmask {
+        background: linear-gradient(to right, #fff, rgba(255,255,255,0));
+    }
+
+    &.darkmask {
+        background: linear-gradient(to top, #000, rgba(0,0,0,0));
+    }
+}
+
+.thedrag {
+    position: absolute;
+    height: 3px;
+    width: 3px;
+    border-radius: 1.5px;
+    border: 1px solid #000;
+}

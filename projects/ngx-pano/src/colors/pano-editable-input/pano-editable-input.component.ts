@@ -1,0 +1,171 @@
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output } from '@angular/core';
+import { fromEvent, Subscription } from 'rxjs';
+
+let nextUniqueId = 1;
+
+@Component({
+    selector: 'pano-editable-input',
+    templateUrl: './pano-editable-input.component.html',
+    styleUrls: ['./pano-editable-input.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class PanoEditableInputComponent implements OnInit, OnChanges, OnDestroy {
+
+    @Input()
+    style!: {
+        wrap?: Record<string, any>;
+        input?: Record<string, any>;
+        label?: Record<string, any>;
+    };
+
+    @Input()
+    label!: string;
+
+    @Input()
+    value!: string | number;
+
+    @Input()
+    arrowOffset!: number;
+
+    @Input()
+    dragLabel!: boolean;
+
+    @Input()
+    dragMax!: number;
+
+    @Input()
+    placeholder = '';
+
+    @Output()
+    onChange = new EventEmitter();
+
+    currentValue!: string | number;
+    blurValue!: string;
+    wrapStyle!: Record<string, string>;
+    inputStyle!: Record<string, string>;
+    labelStyle!: Record<string, string>;
+    focus = false;
+    mousemove!: Subscription;
+    mouseup!: Subscription;
+    uniqueId: string = `editableInput-${nextUniqueId++}`;
+
+    ngOnInit() {
+        this.wrapStyle = this.style && this.style.wrap ? this.style.wrap : {};
+        this.inputStyle = this.style && this.style.input ? this.style.input : {};
+        this.labelStyle = this.style && this.style.label ? this.style.label : {};
+        if (this.dragLabel) {
+            this.labelStyle['cursor'] = 'ew-resize';
+        }
+    }
+    handleFocus($event: any) {
+        this.focus = true;
+    }
+    handleFocusOut($event: any) {
+        this.focus = false;
+        this.currentValue = this.blurValue;
+    }
+    handleKeydown($event: any) {
+        // In case `e.target.value` is a percentage remove the `%` character
+        // and update accordingly with a percentage
+        // https://github.com/casesandberg/react-color/issues/383
+        const stringValue = String($event.target.value);
+        const isPercentage = stringValue.indexOf('%') > -1;
+        const num = Number(stringValue.replace(/%/g, ''));
+        if (isNaN(num)) {
+            return;
+        }
+        const amount = this.arrowOffset || 1;
+
+        // Up
+        if ($event.keyCode === 38) {
+            if (this.label) {
+                this.onChange.emit({
+                    data: { [this.label]: num + amount },
+                    $event,
+                });
+            } else {
+                this.onChange.emit({ data: num + amount, $event });
+            }
+
+            if (isPercentage) {
+                this.currentValue = `${num + amount}%`;
+            } else {
+                this.currentValue = num + amount;
+            }
+        }
+
+        // Down
+        if ($event.keyCode === 40) {
+            if (this.label) {
+                this.onChange.emit({
+                    data: { [this.label]: num - amount },
+                    $event,
+                });
+            } else {
+                this.onChange.emit({ data: num - amount, $event });
+            }
+
+            if (isPercentage) {
+                this.currentValue = `${num - amount}%`;
+            } else {
+                this.currentValue = num - amount;
+            }
+        }
+    }
+    handleKeyup($event: any) {
+        if ($event.keyCode === 40 || $event.keyCode === 38) {
+            return;
+        }
+        if (`${this.currentValue}` === $event.target.value) {
+            return;
+        }
+
+        if (this.label) {
+            this.onChange.emit({
+                data: { [this.label]: $event.target.value },
+                $event,
+            });
+        } else {
+            this.onChange.emit({ data: $event.target.value, $event });
+        }
+    }
+    ngOnChanges() {
+        if (!this.focus) {
+            this.currentValue = String(this.value).toUpperCase();
+            this.blurValue = String(this.value).toUpperCase();
+        } else {
+            this.blurValue = String(this.value).toUpperCase();
+        }
+    }
+    ngOnDestroy() {
+        this.unsubscribe();
+    }
+    subscribe() {
+        this.mousemove = fromEvent(document, 'mousemove').subscribe((ev: Event) => this.handleDrag(ev));
+        this.mouseup = fromEvent(document, 'mouseup').subscribe(() => this.unsubscribe());
+    }
+    unsubscribe() {
+        if (this.mousemove) {
+            this.mousemove.unsubscribe();
+        }
+        if (this.mouseup) {
+            this.mouseup.unsubscribe();
+        }
+    }
+    handleMousedown($event: Event) {
+        if (this.dragLabel) {
+            $event.preventDefault();
+            this.handleDrag($event);
+            this.subscribe();
+        }
+    }
+    handleDrag($event: any) {
+        if (this.dragLabel) {
+            const newValue = Math.round(this.value + $event.movementX);
+            if (newValue >= 0 && newValue <= this.dragMax) {
+                this.onChange.emit({ data: { [this.label]: newValue }, $event });
+            }
+        }
+    }
+
+}

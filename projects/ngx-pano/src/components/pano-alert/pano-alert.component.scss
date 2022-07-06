@@ -1,0 +1,31 @@
+@import '../../styles/mixins';
+@import '../../styles/themes/variable';
+@import '../../styles/themes/alert';
+
+:host {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    border-radius: $pano-alert-border-radius;
+    box-shadow: $pano-alert-shadow;
+    font-family: $pano-alert-font-family;
+    font-size: $pano-alert-font-size;
+    font-weight: $pano-alert-font-weight;
+    line-height: $pano-alert-line-height;
+    padding: $pano-alert-padding;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+
+    padding: $pano-alert-close-padding;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    font-family: monospace;
+}

@@ -1,0 +1,403 @@
+@import "variable";
+
+$pano-button-cursor: pointer;
+$pano-button-font-family: $font-family-primary;
+$pano-button-font-weight: 700;
+$pano-button-outline-width: 0.375rem;
+$pano-button-outline-color: color-basic-transparent-200;
+$pano-button-disabled-cursor: default;
+
+$pano-button-border-style: solid;
+$pano-button-border-width: 0.0625rem;
+
+$pano-button-text-transform: uppercase;
+
+$pano-button-text-transform: uppercase;
+
+$pano-button-border-radius: 0.25rem;
+
+// padding
+$pano-button-padding-default: 0.6875rem 1.125rem;
+$pano-button-padding-tiny: 0.3125rem 0.625rem;
+$pano-button-padding-small: 0.4375rem 0.875rem;
+$pano-button-padding-large: 0.8125rem 1.125rem;
+$pano-button-padding-giant: 0.9375rem 1.375rem;
+
+//text-font-size
+$pano-button-text-font-size-default: 0.875rem;
+$pano-button-text-font-size-tiny: 0.625rem;
+$pano-button-text-font-size-small: 0.75rem;
+$pano-button-text-font-size-large: 1rem;
+$pano-button-text-font-size-giant: 1.125rem;
+
+//text-line-height
+$pano-button-text-line-height-default: 1rem;
+$pano-button-text-line-height-tiny: 0.75rem;
+$pano-button-text-line-height-small: 1rem;
+$pano-button-text-line-height-large: 1.25rem;
+$pano-button-text-line-height-giant: 1.5rem;
+
+//icon-offset
+$pano-button-icon-offset-default: 0.5rem;
+$pano-button-icon-offset-tiny: 0.375rem;
+$pano-button-icon-offset-small: 0.375rem;
+$pano-button-icon-offset-large: 0.75rem;
+$pano-button-icon-offset-giant: 0.75rem;
+
+//icon-size
+$pano-button-icon-size-default: 1.25rem;
+$pano-button-icon-size-tiny: 0.75rem;
+$pano-button-icon-size-small: 1rem;
+$pano-button-icon-size-large: 1.5rem;
+$pano-button-icon-size-giant: 1.5rem;
+
+//icon-vertinal-margin
+$pano-button-icon-vertical-margin-default: -0.125rem;
+$pano-button-icon-vertical-margin-tiny: -0.125rem;
+$pano-button-icon-vertical-margin-small: -0.125rem;
+$pano-button-icon-vertical-margin-large: -0.125rem;
+$pano-button-icon-vertical-margin-giant: -0.125rem;
+
+//color-default
+$pano-button-background-color-default: #edf1f7;
+$pano-button-border-color-default: #edf1f7;
+$pano-button-color-default: #222b45;
+
+//color-primary
+$pano-button-background-color-primary: #3366ff;
+$pano-button-border-color-primary: #3366ff;
+$pano-button-color-primary: #ffffff;
+
+//color-success
+$pano-button-background-color-success: #00d68f;
+$pano-button-border-color-success: #00d68f;
+$pano-button-color-success: #ffffff;
+
+//color-info
+$pano-button-background-color-info: #0095ff;
+$pano-button-border-color-info: #0095ff;
+$pano-button-color-info: #ffffff;
+
+//color-warning
+$pano-button-background-color-warning: #ffaa00;
+$pano-button-border-color-warning: #ffaa00;
+$pano-button-color-warning: #ffffff;
+
+//color-danger
+$pano-button-background-color-danger: #ff3d71;
+$pano-button-border-color-danger: #ff3d71;
+$pano-button-color-danger: #ffffff;
+
+//color-control
+$pano-button-background-color-control: #ffffff;
+$pano-button-border-color-control: #ffffff;
+$pano-button-color-control: #222b45;
+
+//color-default.focus.active.hover.disabled
+$pano-button-background-color-default-focus: #e4e9f2;
+$pano-button-border-color-default-focus: #c5cee0;
+$pano-button-background-color-default-hover: #f7f9fc;
+$pano-button-border-color-default-hover: #f7f9fc;
+$pano-button-background-color-default-active: #e4e9f2;
+$pano-button-border-color-default-active: #e4e9f2;
+$pano-button-background-color-default-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-border-color-default-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-color-default-disabled: rgba(143, 155, 179, 0.48);
+
+//color-primary.focus.active.hover.disabled
+$pano-button-background-color-primary-focus: #274bdb;
+$pano-button-border-color-primary-focus: #1a34b8;
+$pano-button-background-color-primary-hover: #598bff;
+$pano-button-border-color-primary-hover: #598bff;
+$pano-button-background-color-primary-active: #274bdb;
+$pano-button-border-color-primary-active: #274bdb;
+$pano-button-background-color-primary-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-border-color-primary-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-color-primary-disabled: rgba(143, 155, 179, 0.48);
+
+//color-success.focus.active.hover.disabled
+$pano-button-background-color-success-focus: #00b887;
+$pano-button-border-color-success-focus: #00997a;
+$pano-button-background-color-success-hover: #2ce69b;
+$pano-button-border-color-success-hover: #2ce69b;
+$pano-button-background-color-success-active: #00b887;
+$pano-button-border-color-success-active: #00b887;
+$pano-button-background-color-success-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-border-color-success-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-color-success-disabled: rgba(143, 155, 179, 0.48);
+
+//color-info.focus.active.hover.disabled
+$pano-button-background-color-info-focus: #006fd6;
+$pano-button-border-color-info-focus: #0057c2;
+$pano-button-background-color-info-hover: #42aaff;
+$pano-button-border-color-info-hover: #42aaff;
+$pano-button-background-color-info-active: #006fd6;
+$pano-button-border-color-info-active: #006fd6;
+$pano-button-background-color-info-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-border-color-info-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-color-info-disabled: rgba(143, 155, 179, 0.48);
+
+//color-hover.focus.active.hover.disabled
+$pano-button-background-color-warning-focus: #db8b00;
+$pano-button-border-color-warning-focus: #b86e00;
+$pano-button-background-color-warning-hover: #ffc94d;
+$pano-button-border-color-warning-hover: #ffc94d;
+$pano-button-background-color-warning-active: #db8b00;
+$pano-button-border-color-warning-active: #db8b00;
+$pano-button-background-color-warning-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-border-color-warning-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-color-warning-disabled: rgba(143, 155, 179, 0.48);
+
+//color-danger.focus.active.hover.disabled
+$pano-button-background-color-danger-focus: #db2c66;
+$pano-button-border-color-danger-focus: #b81d5b;
+$pano-button-background-color-danger-hover: #ff708d;
+$pano-button-border-color-danger-hover: #ff708d;
+$pano-button-background-color-danger-active: #db2c66;
+$pano-button-border-color-danger-active: #db2c66;
+$pano-button-background-color-danger-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-border-color-danger-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-color-danger-disabled: rgba(143, 155, 179, 0.48);
+
+//color-control.focus.active.hover.disabled
+$pano-button-background-color-control-focus: #edf1f7;
+$pano-button-border-color-control-focus: #c5cee0;
+$pano-button-background-color-control-hover: #f7f9fc;
+$pano-button-border-color-control-hover: #f7f9fc;
+$pano-button-background-color-control-active: #edf1f7;
+$pano-button-border-color-control-active: #edf1f7;
+$pano-button-background-color-control-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-border-color-control-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-color-control-disabled: rgba(143, 155, 179, 0.48);
+
+$pano-button-outline-background-color-default: rgba(143, 155, 179, 0.08);
+$pano-button-outline-border-color-default: #8f9bb3;
+$pano-button-outline-color-default: #8f9bb3;
+$pano-button-outline-background-color-default-focus: rgba(143, 155, 179, 0.24);
+$pano-button-outline-border-color-default-focus: #8f9bb3;
+$pano-button-outline-color-default-focus: #8f9bb3;
+$pano-button-outline-background-color-default-hover: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-default-hover: #8f9bb3;
+$pano-button-outline-color-default-hover: #8f9bb3;
+$pano-button-outline-background-color-default-active: rgba(143, 155, 179, 0.24);
+$pano-button-outline-border-color-default-active: #8f9bb3;
+$pano-button-outline-color-default-active: #8f9bb3;
+$pano-button-outline-background-color-default-disabled: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-default-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-outline-color-default-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-outline-background-color-primary: rgba(51, 102, 255, 0.08);
+$pano-button-outline-border-color-primary: #3366ff;
+$pano-button-outline-color-primary: #3366ff;
+$pano-button-outline-background-color-primary-focus: rgba(51, 102, 255, 0.24);
+$pano-button-outline-border-color-primary-focus: #3366ff;
+$pano-button-outline-color-primary-focus: #3366ff;
+$pano-button-outline-background-color-primary-hover: rgba(51, 102, 255, 0.16);
+$pano-button-outline-border-color-primary-hover: #3366ff;
+$pano-button-outline-color-primary-hover: #3366ff;
+$pano-button-outline-background-color-primary-active: rgba(51, 102, 255, 0.24);
+$pano-button-outline-border-color-primary-active: #3366ff;
+$pano-button-outline-color-primary-active: #3366ff;
+$pano-button-outline-background-color-primary-disabled: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-primary-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-outline-color-primary-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-outline-background-color-success: rgba(0, 214, 143, 0.08);
+$pano-button-outline-border-color-success: #00d68f;
+$pano-button-outline-color-success: #00d68f;
+$pano-button-outline-background-color-success-focus: rgba(0, 214, 143, 0.24);
+$pano-button-outline-border-color-success-focus: #00d68f;
+$pano-button-outline-color-success-focus: #00d68f;
+$pano-button-outline-background-color-success-hover: rgba(0, 214, 143, 0.16);
+$pano-button-outline-border-color-success-hover: #00d68f;
+$pano-button-outline-color-success-hover: #00d68f;
+$pano-button-outline-background-color-success-active: rgba(0, 214, 143, 0.24);
+$pano-button-outline-border-color-success-active: #00d68f;
+$pano-button-outline-color-success-active: #00d68f;
+$pano-button-outline-background-color-success-disabled: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-success-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-outline-color-success-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-outline-background-color-info: rgba(0, 149, 255, 0.08);
+$pano-button-outline-border-color-info: #0095ff;
+$pano-button-outline-color-info: #0095ff;
+$pano-button-outline-background-color-info-focus: rgba(0, 149, 255, 0.24);
+$pano-button-outline-border-color-info-focus: #0095ff;
+$pano-button-outline-color-info-focus: #0095ff;
+$pano-button-outline-background-color-info-hover: rgba(0, 149, 255, 0.16);
+$pano-button-outline-border-color-info-hover: #0095ff;
+$pano-button-outline-color-info-hover: #0095ff;
+$pano-button-outline-background-color-info-active: rgba(0, 149, 255, 0.24);
+$pano-button-outline-border-color-info-active: #0095ff;
+$pano-button-outline-color-info-active: #0095ff;
+$pano-button-outline-background-color-info-disabled: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-info-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-outline-color-info-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-outline-background-color-warning: rgba(255, 170, 0, 0.08);
+$pano-button-outline-border-color-warning: #ffaa00;
+$pano-button-outline-color-warning: #ffaa00;
+$pano-button-outline-background-color-warning-focus: rgba(255, 170, 0, 0.24);
+$pano-button-outline-border-color-warning-focus: #ffaa00;
+$pano-button-outline-color-warning-focus: #ffaa00;
+$pano-button-outline-background-color-warning-hover: rgba(255, 170, 0, 0.16);
+$pano-button-outline-border-color-warning-hover: #ffaa00;
+$pano-button-outline-color-warning-hover: #ffaa00;
+$pano-button-outline-background-color-warning-active: rgba(255, 170, 0, 0.24);
+$pano-button-outline-border-color-warning-active: #ffaa00;
+$pano-button-outline-color-warning-active: #ffaa00;
+$pano-button-outline-background-color-warning-disabled: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-warning-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-outline-color-warning-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-outline-background-color-danger: rgba(255, 61, 113, 0.08);
+$pano-button-outline-border-color-danger: #ff3d71;
+$pano-button-outline-color-danger: #ff3d71;
+$pano-button-outline-background-color-danger-focus: rgba(255, 61, 113, 0.24);
+$pano-button-outline-border-color-danger-focus: #ff3d71;
+$pano-button-outline-color-danger-focus: #ff3d71;
+$pano-button-outline-background-color-danger-hover: rgba(255, 61, 113, 0.16);
+$pano-button-outline-border-color-danger-hover: #ff3d71;
+$pano-button-outline-color-danger-hover: #ff3d71;
+$pano-button-outline-background-color-danger-active: rgba(255, 61, 113, 0.24);
+$pano-button-outline-border-color-danger-active: #ff3d71;
+$pano-button-outline-color-danger-active: #ff3d71;
+$pano-button-outline-background-color-danger-disabled: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-danger-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-outline-color-danger-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-outline-background-color-control: rgba(255, 255, 255, 0.08);
+$pano-button-outline-border-color-control: #ffffff;
+$pano-button-outline-color-control: #ffffff;
+$pano-button-outline-background-color-control-focus: rgba(255, 255, 255, 0.24);
+$pano-button-outline-border-color-control-focus: #ffffff;
+$pano-button-outline-color-control-focus: #ffffff;
+$pano-button-outline-background-color-control-hover: rgba(255, 255, 255, 0.16);
+$pano-button-outline-border-color-control-hover: #ffffff;
+$pano-button-outline-color-control-hover: #ffffff;
+$pano-button-outline-background-color-control-active: rgba(255, 255, 255, 0.24);
+$pano-button-outline-border-color-control-active: #ffffff;
+$pano-button-outline-color-control-active: #ffffff;
+$pano-button-outline-background-color-control-disabled: rgba(143, 155, 179, 0.16);
+$pano-button-outline-border-color-control-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-outline-color-control-disabled: rgba(143, 155, 179, 0.48);
+
+$button-hero-border-style: solid;
+$button-hero-border-width: 0;
+$button-hero-text-transform: uppercase;
+$button-hero-tiny-padding: 0.375rem 0.6875rem;
+$button-hero-small-padding: 0.5rem 0.9375rem;
+$button-hero-medium-padding: 0.75rem 1.1875rem;
+$button-hero-large-padding: 0.875rem 1.1875rem;
+$button-hero-giant-padding: 1rem 1.4375rem;
+
+$button-hero-text-shadow: 0 0.5rem 1rem 0 rgba(44, 51, 73, 0.1);
+
+$button-hero-outline-width: 0.375rem;
+
+$pano-button-hero-bevel-size: 0 0 0 0;
+$panp-button-hero-glow-size: 0 0 0 0;
+$pano-button-hero-shadow: 0 0 transparent;
+
+//$pano-button-hero-border-color-default: transparent ;
+//$pano-button-hero-outline-color-default: rgba(143, 155, 179, 0.16) ;
+
+
+
+$pano-button-hero-background-color-left-control-active: #f7f9fc;
+$pano-button-hero-background-color-left-danger-active: #ff3d71;
+$pano-button-hero-background-color-left-default-active: #edf1f7;
+$pano-button-hero-background-color-left-info-active: #0095ff;
+$pano-button-hero-background-color-left-primary-active: #3366ff;
+$pano-button-hero-background-color-left-success-active: #00d68f;
+$pano-button-hero-background-color-left-warning-active: #ffaa00;
+
+$pano-button-hero-background-color-right-control-active: #edf1f7;
+$pano-button-hero-background-color-right-danger-active: #db2c66;
+$pano-button-hero-background-color-right-default-active: #e4e9f2;
+$pano-button-hero-background-color-right-info-active: #006fd6;
+$pano-button-hero-background-color-right-primary-active: #274bdb;
+$pano-button-hero-background-color-right-success-active: #00b887;
+$pano-button-hero-background-color-right-warning-active: #db8b00;
+
+$pano-button-hero-background-color-left-control: #ffffff;
+$pano-button-hero-background-color-left-danger: #ff708d;
+$pano-button-hero-background-color-left-default: #f7f9fc;
+$pano-button-hero-background-color-left-info: #42aaff;
+$pano-button-hero-background-color-left-primary: #598bff;
+$pano-button-hero-background-color-left-success: #2ce69b;
+$pano-button-hero-background-color-left-warning: #ffc94d;
+
+$pano-button-hero-background-color-right-control: #ffffff;
+$pano-button-hero-background-color-right-danger: #ff3d71;
+$pano-button-hero-background-color-right-default: #edf1f7;
+$pano-button-hero-background-color-right-info: #0095ff;
+$pano-button-hero-background-color-right-primary: #3366ff;
+$pano-button-hero-background-color-right-success: #00d68f;
+$pano-button-hero-background-color-right-warning: #ffaa00;
+
+$pano-button-hero-bevel-color-control: #8f9bb3;
+$pano-button-hero-bevel-color-danger: #db2c66;
+$pano-button-hero-bevel-color-default: #8f9bb3;
+$pano-button-hero-bevel-color-info: #006fd6;
+$pano-button-hero-bevel-color-primary: #274bdb;
+$pano-button-hero-bevel-color-success: #00b887;
+$pano-button-hero-bevel-color-warning: #db8b00;
+
+$pano-button-hero-color-control: #222b45;
+$pano-button-hero-color-danger: #ffffff;
+$pano-button-hero-color-default: #8f9bb3;
+$pano-button-hero-color-info: #ffffff;
+$pano-button-hero-color-primary: #ffffff;
+$pano-button-hero-color-success: #ffffff;
+$pano-button-hero-color-warning: #ffffff;
+
+$pano-button-hero-background-color-control-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-hero-background-color-danger-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-hero-background-color-default-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-hero-background-color-info-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-hero-background-color-primary-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-hero-background-color-success-disabled: rgba(143, 155, 179, 0.24);
+$pano-button-hero-background-color-warning-disabled: rgba(143, 155, 179, 0.24);
+
+$pano-button-hero-color-control-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-hero-color-danger-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-hero-color-default-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-hero-color-info-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-hero-color-primary-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-hero-color-success-disabled: rgba(143, 155, 179, 0.48);
+$pano-button-hero-color-warning-disabled: rgba(143, 155, 179, 0.48);
+
+$pano-button-hero-background-color-left-control-focus: #f7f9fc;
+$pano-button-hero-background-color-left-danger-focus: #ff3d71;
+$pano-button-hero-background-color-left-default-focus: #edf1f7;
+$pano-button-hero-background-color-left-info-focus: #0095ff;
+$pano-button-hero-background-color-left-primary-focus: #3366ff;
+$pano-button-hero-background-color-left-success-focus: #00d68f;
+$pano-button-hero-background-color-left-warning-focus: #ffaa00;
+
+$pano-button-hero-background-color-right-control-focus: #edf1f7;
+$pano-button-hero-background-color-right-danger-focus: #db2c66;
+$pano-button-hero-background-color-right-default-focus: #e4e9f2;
+$pano-button-hero-background-color-right-info-focus: #006fd6;
+$pano-button-hero-background-color-right-primary-focus: #274bdb;
+$pano-button-hero-background-color-right-success-focus: #00b887;
+$pano-button-hero-background-color-right-warning-focus: #db8b00;
+
+$pano-button-hero-glow-color-control: #2e3a59;
+$pano-button-hero-glow-color-danger: #b81d5b;
+$pano-button-hero-glow-color-default: #2e3a59;
+$pano-button-hero-glow-color-info: #0057c2;
+$pano-button-hero-glow-color-primary: #1a34b8;
+$pano-button-hero-glow-color-success: #00997a;
+$pano-button-hero-glow-color-warning: #b86e00;
+
+$pano-button-hero-background-color-left-control-hover: #ffffff;
+$pano-button-hero-background-color-left-danger-hover: #ffa8b4;
+$pano-button-hero-background-color-left-default-hover: #ffffff;
+$pano-button-hero-background-color-left-info-hover: #94cbff;
+$pano-button-hero-background-color-left-primary-hover: #a6c1ff;
+$pano-button-hero-background-color-left-success-hover: #8cfac7;
+$pano-button-hero-background-color-left-warning-hover: #ffe59e;
+
+$pano-button-hero-background-color-right-control-hover: #f7f9fc;
+$pano-button-hero-background-color-right-danger-hover: #ff708d;
+$pano-button-hero-background-color-right-default-hover: #f7f9fc;
+$pano-button-hero-background-color-right-info-hover: #42aaff;
+$pano-button-hero-background-color-right-primary-hover: #598bff;
+$pano-button-hero-background-color-right-success-hover: #2ce69b;
+$pano-button-hero-background-color-right-warning-hover: #ffc94d;
