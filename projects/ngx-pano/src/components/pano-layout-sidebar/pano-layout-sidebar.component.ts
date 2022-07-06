@@ -20,7 +20,7 @@ export class PanoLayoutSidebarComponent implements OnInit {
 
     @HostBinding("@resize")
     get state(): string {
-        return this.panoSidebarToggleService._state;
+        return this.panoSidebarToggleService.sidebarState();
     }
 
     constructor(private panoSidebarToggleService: PanoSidebarToggleService) { }
