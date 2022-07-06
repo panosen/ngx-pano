@@ -3,7 +3,12 @@
  */
 
 export * from './services/ngx-pano.service';
+export * from './services/pano-sidebar-toggle.service'
 
 export * from './components/pano-layout/pano-layout.component';
+export * from './components/pano-layout-head/pano-layout-head.component';
+export * from './components/pano-layout-main/pano-layout-main.component';
+export * from './components/pano-layout-sidebar/pano-layout-sidebar.component';
+export * from './components/pano-layout-column/pano-layout-column.component';
 
 export * from './ngx-pano.module';

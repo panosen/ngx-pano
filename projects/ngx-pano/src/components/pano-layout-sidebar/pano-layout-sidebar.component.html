@@ -1,0 +1,8 @@
+<div class="autoscroll">
+    <ng-content></ng-content>
+</div>
+
+<div class="toggle" (click)="toggle()">
+    <ng-content select=".icon-normal" *ngIf="state == 'normal'"></ng-content>
+    <ng-content select=".icon-mini" *ngIf="state == 'mini'"></ng-content>
+</div>

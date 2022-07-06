@@ -1,0 +1,25 @@
+:host {
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 5px 0px #808080;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.toggle {
+    box-shadow: 0 0 5px 0px #808080;
+    padding: 3px 8px;
+    display: flex;
+    background: #fff;
+
+    pano-icon {
+        margin: auto;
+        padding: 12px;
+    }
+}
+
+.autoscroll {
+    overflow-y: auto;
+}
