@@ -13,7 +13,7 @@ const resize = trigger('resize', [
 @Component({
     selector: 'pano-layout-sidebar',
     templateUrl: './pano-layout-sidebar.component.html',
-    styleUrls: ['./pano-layout-sidebar.component.scss'],
+    styleUrls: ['./pano-layout-sidebar.component.css'],
     animations: [resize]
 })
 export class PanoLayoutSidebarComponent implements OnInit {
