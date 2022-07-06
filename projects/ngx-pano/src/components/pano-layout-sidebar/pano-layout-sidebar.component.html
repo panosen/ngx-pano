@@ -3,10 +3,10 @@
 </div>
 
 <div class="toggle" (click)="toggle()">
-    <ng-template *ngIf="state == 'normal'">
+    <div class="icon" *ngIf="state == 'normal'">
         <ng-content select="[normal]"></ng-content>
-    </ng-template>
-    <ng-template *ngIf="state == 'mini'">
+    </div>
+    <div class="icon" *ngIf="state == 'mini'">
         <ng-content select="[mini]"></ng-content>
-    </ng-template>
+    </div>
 </div>
