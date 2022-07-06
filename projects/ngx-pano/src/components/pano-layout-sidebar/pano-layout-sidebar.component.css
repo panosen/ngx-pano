@@ -10,15 +10,11 @@
 
 .toggle {
     box-shadow: 0 0 5px 0px #808080;
-    padding: 3px 8px;
+    padding: 12px;
+    justify-content: center;
     display: flex;
     background: #fff;
 }
-
-    .toggle .icon {
-        margin: auto;
-        padding: 12px;
-    }
 
 .autoscroll {
     overflow-y: auto;
