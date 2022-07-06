@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxPanoComponent } from './ngx-pano.component';
+import { PanoLayoutComponent } from './pano-layout.component';
 
-describe('NgxPanoComponent', () => {
-  let component: NgxPanoComponent;
-  let fixture: ComponentFixture<NgxPanoComponent>;
+describe('PanoLayoutComponent', () => {
+  let component: PanoLayoutComponent;
+  let fixture: ComponentFixture<PanoLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxPanoComponent ]
+      declarations: [ PanoLayoutComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NgxPanoComponent);
+    fixture = TestBed.createComponent(PanoLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

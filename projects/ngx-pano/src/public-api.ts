@@ -2,6 +2,8 @@
  * Public API Surface of ngx-pano
  */
 
-export * from './lib/ngx-pano.service';
-export * from './lib/ngx-pano.component';
-export * from './lib/ngx-pano.module';
+export * from './services/ngx-pano.service';
+
+export * from './components/pano-layout/pano-layout.component';
+
+export * from './ngx-pano.module';
