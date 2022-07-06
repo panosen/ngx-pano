@@ -13,14 +13,12 @@
     padding: 3px 8px;
     display: flex;
     background: #fff;
-    pano-icon
-
-{
-    margin: auto;
-    padding: 12px;
 }
 
-}
+    .toggle pano-icon {
+        margin: auto;
+        padding: 12px;
+    }
 
 .autoscroll {
     overflow-y: auto;
