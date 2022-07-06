@@ -1,0 +1,12 @@
+:host {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+.pano-layout-body {
+    overflow: hidden;
+    flex: 1;
+    display: flex;
+}
