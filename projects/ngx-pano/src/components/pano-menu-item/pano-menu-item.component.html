@@ -1,0 +1,13 @@
+<div class="title">
+    <div *ngIf="menuItem && !menuItem.routerLink" [ngStyle]="mm()" (click)="toggle()">{{menuItem.title}}</div>
+    <a *ngIf="menuItem && menuItem.routerLink" [routerLink]="menuItem.routerLink" [ngStyle]="mm()">{{menuItem.title}}</a>
+</div>
+
+<div class="toggle-button" *ngIf="menuItem && menuItem.children && menuItem.children.length" (click)="toggle()">
+    <pano-icon name="chevron-down-outline" *ngIf="!menuItem.expanded"></pano-icon>
+    <pano-icon name="chevron-up-outline" *ngIf="menuItem.expanded"></pano-icon>
+</div>
+
+<div *ngIf="menuItem && menuItem.children" class="children" [@submenu]="menuItem.expanded ? 'open' : 'close'">
+    <pano-menu-item [menuItem]="x" *ngFor="let x of menuItem.children" [tabSize]="tabSize + 1"></pano-menu-item>
+</div>

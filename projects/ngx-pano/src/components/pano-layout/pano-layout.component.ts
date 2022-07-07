@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'pano-layout',
   templateUrl: './pano-layout.component.html',
-  styleUrls: ['./pano-layout.component.css']
+  styleUrls: ['./pano-layout.component.scss']
 })
 export class PanoLayoutComponent implements OnInit, AfterViewInit, OnDestroy {
 

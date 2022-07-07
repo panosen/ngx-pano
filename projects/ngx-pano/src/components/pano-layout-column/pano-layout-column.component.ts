@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'pano-layout-column',
     templateUrl: './pano-layout-column.component.html',
-    styleUrls: ['./pano-layout-column.component.css']
+    styleUrls: ['./pano-layout-column.component.scss']
 })
 export class PanoLayoutColumnComponent implements OnInit {
 
