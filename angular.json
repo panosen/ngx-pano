@@ -5,6 +5,11 @@
   "projects": {
     "ngx-pano": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "projects/ngx-pano",
       "sourceRoot": "projects/ngx-pano/src",
       "prefix": "",
@@ -34,5 +39,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
