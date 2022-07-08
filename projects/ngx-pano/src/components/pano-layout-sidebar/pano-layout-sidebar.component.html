@@ -3,10 +3,6 @@
 </div>
 
 <div class="toggle" (click)="toggle()">
-    <ng-container *ngIf="state == 'normal'">
-        <ng-content select="[normal]"></ng-content>
-    </ng-container>
-    <ng-container *ngIf="state == 'mini'">
-        <ng-content select="[mini]"></ng-content>
-    </ng-container>
+    <pano-icon name="chevron_left" *ngIf="state == 'normal'"></pano-icon>
+    <pano-icon name="chevron_right" *ngIf="state == 'mini'"></pano-icon>
 </div>

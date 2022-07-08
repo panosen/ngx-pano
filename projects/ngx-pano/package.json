@@ -1,11 +1,12 @@
 {
-  "name": "ngx-pano",
-  "version": "0.1.1",
-  "peerDependencies": {
-    "@angular/common": "^14.0.0",
-    "@angular/core": "^14.0.0"
-  },
-  "dependencies": {
-    "tslib": "^2.3.0"
-  }
+    "name": "ngx-pano",
+    "version": "0.2.0",
+    "peerDependencies": {
+        "@angular/common": "^14.0.0",
+        "@angular/core": "^14.0.0",
+        "pano-bootstrap-icons": "^0.0.1"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    }
 }

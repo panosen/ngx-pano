@@ -22,7 +22,7 @@ jobs:
 
     - name: Build
       run: |
-        npm install --location=global @angular/cli@14.0.4
+        npm install --location=global @angular/cli@14.0.5
         yarn
         ng build ngx-pano
 

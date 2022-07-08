@@ -3,11 +3,11 @@
     position: relative;
     line-height: 40px;
 
-    &.selected {
+/*    &.selected {
         .title {
             background-color: rgb(242 243 245);
         }
-    }
+    }*/
 }
 
 a {
@@ -36,7 +36,7 @@ a {
 .toggle-button {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
 
     pano-icon {
         cursor: pointer;
