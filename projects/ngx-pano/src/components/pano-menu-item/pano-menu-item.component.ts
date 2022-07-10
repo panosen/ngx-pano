@@ -16,8 +16,8 @@ export class PanoMenuItem {
 
 
 const submenu = trigger('submenu', [
-    state('open', style({ height: '0px' })),
-    state('close', style({ height: '*' })),
+    state('open', style({ height: '*' })),
+    state('close', style({ height: '0px' })),
     transition('* <=> *', [
         animate('200ms ease-in')
     ])
