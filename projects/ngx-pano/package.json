@@ -1,6 +1,6 @@
 {
     "name": "ngx-pano",
-    "version": "0.2.1",
+    "version": "0.2.11",
     "peerDependencies": {
         "@angular/common": "^14.0.0",
         "@angular/core": "^14.0.0",

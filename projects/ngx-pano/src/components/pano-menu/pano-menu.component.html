@@ -1,1 +1,1 @@
-<pano-menu-item [menuItem]="x" *ngFor="let x of menuItems"></pano-menu-item>
+<pano-menu-item [menuItem]="x" *ngFor="let x of menuItems" (onActive)="routerLinkChangeHandler($event)"></pano-menu-item>

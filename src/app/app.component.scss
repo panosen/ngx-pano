@@ -1,3 +1,16 @@
+:host {
+    display: flex;
+}
+
+a {
+    color: #333;
+
+    &.xx {
+        font-weight: bold;
+    }
+}
+
+
 .container {
     width: 240px;
     border: 1px dashed #b6ff00;

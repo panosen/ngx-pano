@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PanoMenuItem } from '../../projects/ngx-pano/src/public-api';
 
 @Component({
@@ -6,53 +6,30 @@ import { PanoMenuItem } from '../../projects/ngx-pano/src/public-api';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
 
     menuItems?: PanoMenuItem[]
 
     constructor() { }
 
     ngOnInit(): void {
-        this.menuItems = this.xx();
+        this.menuItems = this.loadMenuItems();
     }
 
-    xx(): PanoMenuItem[] {
+    loadMenuItems(): PanoMenuItem[] {
 
         return [{
-            title: 'a1',
-            children: [{
-                title: 'a2'
-            }, {
-                title: 'a3'
-            }, {
-                title: 'a4',
-                children: [{
-                    title: 'a5',
-                    routerLink: '/pages/one'
-                }, {
-                    title: 'a6'
-                }, {
-                    title: 'a7'
-                }]
-            }]
+            title: 'Welcome',
+            routerLink: '/welcome'
         }, {
-            title: 'a8',
+            title: 'Pages',
             children: [{
-                title: 'a9',
-                routerLink: '/pages/two'
+                title: 'Menu',
+                routerLink: '/pages/menu'
             }, {
-                title: 'a10'
-            }, {
-                title: 'a11'
-            }]
-        }, {
-            title: 'a3',
-            children: [{
-                title: 'a12'
-            }, {
-                title: 'a13'
-            }, {
-                title: 'a14'
+                title: 'Apple',
+                routerLink: '/pages/apple'
             }]
         }];
     }

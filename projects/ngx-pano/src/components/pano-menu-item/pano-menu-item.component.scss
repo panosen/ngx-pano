@@ -2,8 +2,7 @@
     display: block;
     position: relative;
     line-height: 40px;
-
-/*    &.selected {
+    /*    &.selected {
         .title {
             background-color: rgb(242 243 245);
         }
@@ -14,6 +13,10 @@ a {
     text-decoration: none;
     display: block;
     color: #000;
+
+    &.active {
+        background-color: rgb(242 243 245);
+    }
 
     &:visited {
         color: #000;
@@ -29,7 +32,11 @@ a {
     }
 }
 
-.children {
+.open {
+    overflow: initial !important;
+}
+
+.close {
     overflow: hidden;
 }
 

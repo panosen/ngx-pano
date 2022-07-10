@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { HostBinding, Input } from '@angular/core';
+import { EventEmitter, HostBinding, Input, Output } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 export class PanoMenuItem {
@@ -42,8 +42,11 @@ export class PanoMenuItemComponent implements OnInit {
         return this.menuItem?.selected;
     }
 
-    mm() {
-        return { 'padding-left': 10 + this.tabSize * 30 + 'px' };
+    @Output()
+    onActive: EventEmitter<string> = new EventEmitter<string>();
+
+    get titleStyle(): CSSStyleDeclaration {
+        return { 'paddingLeft': 10 + this.tabSize * 30 + 'px' } as CSSStyleDeclaration;
     }
 
     constructor() { }
@@ -56,5 +59,18 @@ export class PanoMenuItemComponent implements OnInit {
             return;
         }
         this.menuItem.expanded = !this.menuItem.expanded;
+    }
+
+    onRouterLinkActiveChange(event: any): void {
+        if (this.menuItem == undefined) {
+            return;
+        }
+        if (event) {
+            this.onActive.emit(this.menuItem.routerLink);
+        }
+    }
+
+    routerLinkChangeHandler(routerLink: string): void {
+        this.onActive.emit(routerLink);
     }
 }

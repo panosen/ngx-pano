@@ -1,6 +1,8 @@
-<div class="title">
-    <div *ngIf="menuItem && !menuItem.routerLink" [ngStyle]="mm()" (click)="toggle()">{{menuItem.title}}</div>
-    <a *ngIf="menuItem && menuItem.routerLink" [routerLink]="menuItem.routerLink" [ngStyle]="mm()">{{menuItem.title}}</a>
+<div class="title" routerLinkActive (isActiveChange)="onRouterLinkActiveChange($event)">
+    <div *ngIf="menuItem && !menuItem.routerLink" [ngStyle]="titleStyle" (click)="toggle()">{{menuItem.title}}</div>
+    <a *ngIf="menuItem && menuItem.routerLink"
+       [routerLink]="menuItem.routerLink" [ngStyle]="titleStyle"
+       routerLinkActive="active">{{menuItem.title}}</a>
 
     <div class="toggle-button" *ngIf="menuItem && menuItem.children && menuItem.children.length" (click)="toggle()">
         <pano-icon name="chevron_down" *ngIf="menuItem.expanded"></pano-icon>
@@ -8,6 +10,6 @@
     </div>
 </div>
 
-<div *ngIf="menuItem && menuItem.children" class="children" [@submenu]="!!menuItem.expanded ? 'open' : 'close'">
-    <pano-menu-item [menuItem]="x" *ngFor="let x of menuItem.children" [tabSize]="tabSize + 1"></pano-menu-item>
+<div *ngIf="menuItem && menuItem.children" [ngClass]="{'open':!!menuItem.expanded,'close':!menuItem.expanded}" [@submenu]="!!menuItem.expanded ? 'open' : 'close'">
+    <pano-menu-item [menuItem]="x" *ngFor="let x of menuItem.children" [tabSize]="tabSize + 1" (onActive)="routerLinkChangeHandler($event)"></pano-menu-item>
 </div>
